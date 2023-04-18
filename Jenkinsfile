@@ -4,13 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         
         stage('Deploy') {
             steps {
-                bat 'mvn package deploy -DmuleDeploy'
+                sh 'mvn package deploy -DmuleDeploy'
             }
         }
     }
