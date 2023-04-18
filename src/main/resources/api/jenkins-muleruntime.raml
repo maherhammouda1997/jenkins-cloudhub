@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: jenkins-muleruntime
+
+/accounts:
+  description: Endpoint pour récupérer la liste des comptes
+  get:
+    description: Récupère la liste des comptes
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {"accountID": "AC123","name": "The first account"},
+                {"accountID": "AC456","name": "The second account"}
+              ]
