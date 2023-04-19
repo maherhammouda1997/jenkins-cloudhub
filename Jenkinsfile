@@ -4,7 +4,7 @@ pipeline {
     agent any
 	environment {
         ANYPOINT_USERNAME = credentials('mahran_hammouda_')
-        ANYPOINT_PASSWORD = credentials('79911997mM.')
+        ANYPOINT_PASSWORD = credentials(79911997mM.)
     }
     stages {
 		stage('Setup Configuration') {
