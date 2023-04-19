@@ -29,13 +29,14 @@ pipeline {
         
         stage('Deploy') {
 			environment {
-				ANYPOINT_CREDENTIALS = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e')
+				ANYPOINT_CREDENTIALS_USR = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').username
+				ANYPOINT_CREDENTIALS_PSW = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').password
 			}
             steps {			   
 				git 'https://github.com/maherhammouda1997/jenkins-cloudhub.git'
 				sh "mvn -Dmaven.test.failure.ignore=true clean deploy -DmuleDeploy -Dworkers=1 -Dworker.type=Micro" + 
-				"-DapplicationName=${env.applicationName} -DmuleVersion=${env.muleVersion} -Denvironment=${env.environment}"
-				//"-Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW}" 
+				"-DapplicationName=${env.applicationName} -DmuleVersion=${env.muleVersion} -Denvironment=${env.environment}" +
+				"-Danypoint.username=${env.ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${env.ANYPOINT_CREDENTIALS_PSW}" 
  				
             }
         }
