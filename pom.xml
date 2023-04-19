@@ -16,12 +16,6 @@
 		<app.runtime>4.4.0-20230320</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
-	<properties>
-		<anypoint.username>${env.ANYPOINT_CREDENTIALS_USR}</anypoint.username>
-		<anypoint.password>${env.ANYPOINT_CREDENTIALS_PSW}</anypoint.password>
-	</properties>
-
-
 	<build>
 		<plugins>
 			<plugin>
@@ -39,8 +33,8 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${muleVersion}</muleVersion>
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
+						<username>${username}</username>
+						<password>${password}</password>
 						<applicationName>${applicationName}</applicationName>
 						<environment>${environment}</environment>
 						<workers>${workers}</workers>
