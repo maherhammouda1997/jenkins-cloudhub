@@ -29,8 +29,8 @@ pipeline {
         
         stage('Deploy') {
 			environment {
-				ANYPOINT_CREDENTIALS_USR = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').username
-				ANYPOINT_CREDENTIALS_PSW = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').password
+				'ANYPOINT_CREDENTIALS_USR' = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').username
+				'ANYPOINT_CREDENTIALS_PSW' = credentials ('e66340e2-d15e-4fa4-96a2-70db4e8dda1e').password
 			}
             steps {			   
 				git 'https://github.com/maherhammouda1997/jenkins-cloudhub.git'
