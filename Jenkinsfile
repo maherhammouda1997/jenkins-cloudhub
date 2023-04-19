@@ -5,8 +5,9 @@ pipeline {
     stages {
 		stage('Setup Configuration') {
             steps {
+				echo "Setup Configuration"
 				script {
-					config = readJSON (file: "env/${env.BRANCH_NAME}/config.json")
+					config = readJSON file: "env/${env.BRANCH_NAME}/config.json"
 					env = config.get("envConfig")
 				}
 			}
