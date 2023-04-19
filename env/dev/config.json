@@ -1,0 +1,7 @@
+{
+	"envConfig" : {
+		"environment" : "TEST",
+		"muleVersion": "4.4.0",
+		"applicationName": "jenkins-muleruntime-test"
+	}
+}
