@@ -7,7 +7,7 @@ pipeline {
             steps {
 				echo "Setup Configuration"
 				script {
-					config = readJson file: "env/${env.BRANCH_NAME}/config.json"
+					config = readJSON file: "env/${env.BRANCH_NAME}/config.json"
 					env = config.get("envConfig")
 				}
 			}
