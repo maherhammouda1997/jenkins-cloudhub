@@ -2,10 +2,6 @@ def config ={}
 def env = {}
 pipeline {
     agent any
-	environment {
-        ANYPOINT_USERNAME = credentials('mahran_hammouda_')
-        ANYPOINT_PASSWORD = credentials(79911997mM.)
-    }
     stages {
 		stage('Setup Configuration') {
             steps {
@@ -33,10 +29,13 @@ pipeline {
         
         stage('Deploy') {
             steps {
+			    withCredentials([usernamePassword(credentialsId: 'maherhammoudaanypointcredentials', usernameVariable: 'mahran_hammouda_', passwordVariable: '79911997mM.')]) 
+				{
 				git 'https://github.com/maherhammouda1997/jenkins-cloudhub.git'
 				sh "mvn -Dmaven.test.failure.ignore=true clean deploy -DmuleDeploy -Dworkers=1 -Dworker.type=Micro" + 
 				"-DapplicationName=${env.applicationName} -DmuleVersion=${env.muleVersion} -Denvironment=${env.environment}" +
-				"-Dusername=${ANYPOINT_USERNAME} -Dpassword=${ANYPOINT_PASSWORD}"      
+				"-Dusername=${ANYPOINT_USERNAME} -Dpassword=${ANYPOINT_PASSWORD}" 
+				}				
             }
         }
     }
