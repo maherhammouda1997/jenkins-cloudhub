@@ -34,9 +34,9 @@ pipeline {
         stage('Deploy') {
             steps {
 				git 'https://github.com/maherhammouda1997/jenkins-cloudhub.git'
-				sh "mvn -Dmaven.test.failure.ignore=true clean deploy -DmuleDeploy -Dworkers=1 -Dworker.type=Micro \n 
-				-DapplicationName=${env.applicationName} -DmuleVersion=${env.muleVersion} -Denvironment=${env.environment} \n
-				-Dusername=${ANYPOINT_USERNAME} -Dpassword=${ANYPOINT_PASSWORD}"      
+				sh "mvn -Dmaven.test.failure.ignore=true clean deploy -DmuleDeploy -Dworkers=1 -Dworker.type=Micro" + 
+				"-DapplicationName=${env.applicationName} -DmuleVersion=${env.muleVersion} -Denvironment=${env.environment}" +
+				"-Dusername=${ANYPOINT_USERNAME} -Dpassword=${ANYPOINT_PASSWORD}"      
             }
         }
     }
