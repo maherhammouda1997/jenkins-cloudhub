@@ -32,13 +32,13 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0</muleVersion>
+						<muleVersion>${muleVersion}</muleVersion>
 						<username>mahran_hammouda_</username>
 						<password>79911997mM.</password>
-						<applicationName>jenkins-muleruntime</applicationName>
-						<environment>Sandbox</environment>
-						<workers>1</workers>
-						<workerType>Micro</workerType>
+						<applicationName>${applicationName}</applicationName>
+						<environment>${environment}</environment>
+						<workers>${workers}</workers>
+						<workerType>${worker.type}</workerType>
 						<properties>
 							<env>dev</env>
 						</properties>

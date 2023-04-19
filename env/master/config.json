@@ -1,0 +1,7 @@
+{
+	"envConfig" : {
+		"environment" : "Sandbox",
+		"muleVersion": "4.4.0",
+		"applicationName": "jenkins-muleruntime"
+	}
+}
