@@ -7,7 +7,8 @@ pipeline {
             steps {
 				echo "Setup Configuration"
 				script {
-					config = readJSON file: "env/${env.BRANCH_NAME}/config.json"
+					//config = readJSON file: "env/${env.BRANCH_NAME}/config.json"
+					config = new JsonSlurper().parseText(readFile(file: "env/${env.BRANCH_NAME}/config.json"))
 					env = config.get("envConfig")
 				}
 			}
